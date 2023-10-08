@@ -35,9 +35,7 @@ To install Sphinx 3.4.1, follow these steps:
 
 6. Reload the system daemon and start and enable the Sphinx service:
 
-   systemctl daemon-reload
-   systemctl start sphinx
-   systemctl enable sphinx
+   systemctl daemon-reload && systemctl start sphinx && systemctl enable sphinx
 
    Once you have completed these steps, Sphinx will be installed and running on your system.
 
