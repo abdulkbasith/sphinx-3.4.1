@@ -1,0 +1,15 @@
+[Unit]
+Description=Sphinx service
+After=multi-user.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/sphinx.pid
+LimitNOFILE=infinity
+LimitNPROC=infinity
+ExecStart=/bin/sphinx --config /etc/sphinx/sphinx.conf 
+ExecStop=/bin/sphinx --stop --config /etc/sphinx/sphinx.conf
+ExecReload=/bin/sh -c "/bin/kill -s HUP $(/bin/cat /var/run/sphinx.pid)"
+
+[Install]
+WantedBy=multi-user.target
