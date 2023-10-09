@@ -23,20 +23,20 @@ To install Sphinx 3.4.1, follow these steps:
    yum install -y gcc-c++ libtool automake mysql-devel mariadb-devel postgresql-devel unixODBC-devel
    ```
 2. Download and extract the Sphinx source archive:
-
+   ```
    cd /opt && wget http://sphinxsearch.com/files/sphinx-3.4.1-efbcc65-linux-amd64-glibc2.12.tar.gz && tar -xzvf sphinx-3.4.1-efbcc65-linux-amd64-glibc2.12.tar.gz
-
+   ```
 3. Copy the Sphinx binaries to `/bin/`:
-
+   ```
    cp sphinx-3.4.1/bin/* /bin/ && cp /bin/searchd /bin/sphinx
-
+   ```
 4. Create the necessary directories:
-
+   ```
    mkdir /etc/sphinx /var/lib/sphinx /var/lib/sphinx/data /var/log/sphinx
-
+   ```
 5. Reload the system daemon and start and enable the Sphinx service:
-
+   ```
    systemctl daemon-reload && systemctl start sphinx && systemctl enable sphinx
-
+   ```
    Once you have completed these steps, Sphinx will be installed and running on your system.
 
